@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Catalog</title>
+        <!--Jquery (dev version)-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <!--Bootstrap-->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="css/bootstrap-3.3.7/bootstrap.min.css">
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="js/bootstrap-3.3.7/bootstrap.min.js"></script>
+            <!--Bootstrap slider by Stefan Petre-->
+            <link rel="stylesheet" href="css/bootstrap-3.3.7/bootstrap-slider.css">
+            <script src="js/bootstrap-3.3.7/bootstrap-slider.js"></script>
+        <!--End Bootstrap-->
+
+        <!--Mains -->
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/main.js"></script>
+        <script src="js/loadTable.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="btn-group-lg btn-group-justified">
+                    <a class="btn btn-primary active" href="#" role="button">Catalog</a>
+                    <a class="btn btn-info" href="#" role="button">Firm</a>
+                    <a class="btn btn-success" href="#" role="button">Personal</a>
+                </div>
+            </div>
+            <div id="content">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        Каталог недвижимости
+                                    </div>
+                                    <table id="content-table" class="table table-striped table-condensed table-hover table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>Имя</th>
+                                                <th>Фамилия</th>
+                                                <th>Адрес</th>
+                                                <th>Телефон</th>
+                                                <th>Площадь (м^2)</th>
+                                                <th>Цена</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--<tr>
+                                                <td>Вася</td>
+                                                <td>Трубочкин</td>
+                                                <td>Советский Союз</td>
+                                                <td>1345691328456813649581</td>
+                                                <td>48.5</td>
+                                                <td>2000000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Петька</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>150</td>
+                                                <td>15000000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Юлия</td>
+                                                <td>Турова</td>
+                                                <td>Кишинёв</td>
+                                                <td>+373811373811</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="property-type">Тип недвижимости</label>
+                                        <div id="property-type" class="input-wrapper">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="property-flat-checkbox" value="0">Квартира
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="property-room-checkbox" value="1">Комната
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="property-house-checkbox" value="2">Дом
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" id="property-land-plot-checkbox" value="3">Участок
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price-slider">Цена недвижимости:</label>
+                                        <div class="input-wrapper">
+                                            <b id="price-slider-left">low</b> 
+                                            <!--<input type="text" class="slider" id="price-slider" data-slider-handle="triangle" data-slider-tooltip="show" data-slider-value="[100, 350]" data-slider-min="20" data-slider-max="2000" />-->
+                                            <input type="text" class="slider" id="price-slider" />
+                                            <b id="price-slider-right">high</b>
+                                        </div> 
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-slider">Площадь недвижимости:</label>
+                                        <div class="input-wrapper">
+                                            <b id="area-slider-left">low</b> 
+                                            <!--<input type="text" class="slider" id="area-slider" data-slider-handle="triangle" data-slider-tooltip="show" data-slider-value="[100, 350]" data-slider-min="20" data-slider-max="2000" />-->
+                                            <input type="text" class="slider" id="area-slider" />
+                                            <b id="area-slider-right">high</b>
+                                        </div> 
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-slider">Возраст недвижимости:</label>
+                                        <div class="input-wrapper">
+                                            <b id="date-slider-left">low</b> 
+                                            <!--<input type="text" class="slider" id="date-slider" data-slider-handle="triangle" data-slider-tooltip="show" data-slider-value="[100, 350]" data-slider-min="20" data-slider-max="2000" />-->
+                                            <input type="text" class="slider" id="date-slider" />
+                                            <b id="date-slider-right">high</b>
+                                        </div> 
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container center-block">
+                <p>Copyright "Nothing & No One Inc.". For any business inquiries, call 1-800-WE-DUNNO.</p>
+            </div>
+        </footer>
+    </body>
+</html>

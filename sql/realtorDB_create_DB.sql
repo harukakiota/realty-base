@@ -1,0 +1,1 @@
+CREATE DATABASE realty_db;

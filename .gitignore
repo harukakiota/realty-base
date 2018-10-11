@@ -1,0 +1,10 @@
+#compiled files
+/frontend/app/**/*.js
+/frontend/app/**/*.js.map
+
+# node files
+/frontend/node_modules/**
+/frontend/npm-debug.log
+
+# IDE files
+/.vscode/**

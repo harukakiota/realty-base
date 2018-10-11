@@ -1,0 +1,7 @@
+<FilesMatch ".(htaccess|htpasswd|ini|phpd|fla|md|psd|log|sh)$">
+Order Allow,Deny
+Allow from all
+AddDefaultCharset UTF-8
+</FilesMatch>
+Options All -Indexes
+DirectoryIndex catalog.html       

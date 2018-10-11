@@ -1,0 +1,1 @@
+DROP TYPE district, user_type, realty_type, material, subway CASCADE;

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Create offer</title>
+    <!--Jquery (dev version)-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap-3.3.7/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap-3.3.7/bootstrap.min.js"></script>
+    <!--Bootstrap slider by Stefan Petre-->
+    <link rel="stylesheet" href="css/bootstrap-3.3.7/bootstrap-slider.css">
+    <script src="js/bootstrap-3.3.7/bootstrap-slider.js"></script>
+    <!--End Bootstrap-->
+
+    <!--Mains -->
+    <script src="js/main.js"></script>
+    <script src="js/offer.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/offer.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" id="form-flat">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Данные квартиры</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body form">
+                        <form id="offer" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4">Адрес</label>
+                                <div class="col-sm-6">
+                                    <p class="form-control-static">Не указан</p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input id="showAddressForm" class="btn btn-default btn-sm btn-block" type="button" value="Указать адрес">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputPrice">Цена</label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="inputPrice" name="price" required="" />
+                                        <span class="input-group-addon">тыс. руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputRealtyType">Тип собственности</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="inputRealtyType" name="realtyType">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputArea">Площадь</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="number" id="inputArea" name="price" required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputFloor">Этаж</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="number" id="inputFloor" name="floor" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputFloorCount">Количество этажей</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="number" id="inputFloorCount" name="floorCount" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputDescription">Описание</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="3" id="inputDescription" name="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputRoomCount">Количество комнат</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="number" id="inputRoomCount" name="roomCount" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="inputWithDecoration" name="withDecoration">Отделка
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputSubway">Ближайшая станция метро</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="inputSubway" name="subway">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputTimeToSubway">Время до станции метро</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input class="form-control" type="number" id="inputTimeToSubway" name="timeToSubway" />
+                                        <span class="input-group-addon">мин.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="inputIsNew" name="isNew">Новостройка
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputBuildingAge">Возраст здания</label>
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="number" id="inputBuildingAge" name="buildingAge" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputBuildingMaterial">Материал здания</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="inputBuildingMaterial" name="buildingMaterial">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputDistrict">Комплекс</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" id="inputDistrict" name="district"  required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="inputHasElectricity" name="hasElectricity">Подведено электричество
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="inputHasGas" name="hasGas">Подведён газ
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputApartmentComplex">Квартирный комплекс</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" id="inputApartmentComplex" name="apartmentComplex" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="inputSurroundingArea">Цена</label>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="inputSurroundingArea" name="surroundingArea" required="" />
+                                        <span class="input-group-addon">м<sup>2</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <input id="hideAddressForm" class="btn btn-success btn-block" type="button" value="Сохранить">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" id="form-address" hidden>
+                <div class="panel panel-default form">
+                    <div class="panel-heading">
+                        <h3>Заполните адрес</h3>
+                    </div>
+                    <div class="panel-body" id="form-address">
+                        <form id="address" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputDistrict">Район</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" id="inputDistrict" name="district"  required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputStreet">Улица/проспект/бульвар</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" id="inputStreet" name="street" required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputBuilding">Здание</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" id="inputBuilding" name="building" required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputCorp">Корпус</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="number" id="inputCorp" name="corp" required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="inputFlat">Квартира</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="number" id="inputFlat" name="flat" required="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <input id="hideAddressForm" class="btn btn-default btn-sm btn-block" type="button" value="Назад">
+                                </div>
+                                <div class="col-sm-offset-8 col-sm-2">
+                                    <input id="saveAddress" class="btn btn-default btn-sm btn-block" type="button" value="Сохранить адрес">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
